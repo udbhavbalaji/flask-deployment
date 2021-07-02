@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>
+            Brain Weight Predictor
+        </title>
+        <center>
+            <h1>Predicting Weight of Brain using Gender, Age and Head Size</h1>
+        </center>
+    </head>
+    <body>
+        <center>
+            <div class="container">
+                <form action="{{url_for('predict')}}"method="post">
+                    <label for="gender">Gender (Male or Female): </label>
+                    <input type="text" id="gender" name="gender" plcaeholder="Gender" required="required" /><br>
+                    <label for="age">Age: </label>
+                    <input type="text" id="age" name="age" placeholder="Age" required="required" /><br>
+                    <label for="head_size">Head Size (in cm<sup>3</sup>): </label>
+                    <input type="text" id="head_size" name="head_size" placeholder="Head Size (in cm^3)" required="required" /><br>
+                    <input type="submit" value="Submit" />                
+                    <br>
+                    <br>
+                    {{ prediction_text }}
+                </form>
+            </div>
+        </center>
+    </body>
+</html>
