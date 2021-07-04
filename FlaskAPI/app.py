@@ -19,7 +19,7 @@ def predict():
     temp_gender = gender
     temp_age = age
 
-    if gender.lower() == 'male':
+    if gender.strip().lower() == 'male':
         gender = 1
     else:
         gender = 2
@@ -32,7 +32,8 @@ def predict():
     test_in = np.array([gender,age,head_size]).reshape(1,-1)
     pred_weight = model.predict(test_in)
     output = round(pred_weight[0], 2)
-    return render_template('after.html', gender="Gender: {}".format(temp_gender), age="Age: {}".format(temp_age), head_size="Head Size: {}".format(head_size), prediction_text="Brain Weight is {} grams".format(output))
+    return render_template('after.html', gender="Gender: {}".format(temp_gender), age="Age: {}".format(temp_age),
+     head_size="Head Size: {}".format(head_size), prediction_text="Brain Weight is {} grams".format(output))
 
 if __name__ == "__main__":
     app.run(debug=True)

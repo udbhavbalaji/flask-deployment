@@ -19,11 +19,8 @@
                     Predicting Weight of Brain using Gender, Age and Head Size
                 </h1>
                 <form action="{{url_for('predict')}}"method="post">
-                    <!-- <label for="gender">Gender (Male or Female): </label> -->
                     <input type="text" id="gender" name="gender" placeholder="Gender (Male or Female)" required="required" /><br>
-                    <!-- <label for="age">Age: </label> -->
                     <input type="text" id="age" name="age" placeholder="Age (in Years)" required="required" /><br>
-                    <!-- <label for="head_size">Head Size (in cm<sup>3</sup>): </label> -->
                     <input type="text" id="head_size" name="head_size" placeholder="Head Size (in cm^3)" required="required" /><br>
                     <input type="submit" class="btn btn-primary btn-block btn-Large" value="Predict" />                
                     <br>
